@@ -1,0 +1,39 @@
+Q.1) Find the number of males and females.
+
+	SELECT sex, COUNT(sex) as number from titanicdata GROUP BY sex;
+
+Q.2) Find the number of dead & alive.
+
+	SELECT(CASE survived
+		when 0 then 'survived'
+		when 1 then 'dead'
+		END) as status, COUNT(survived) from titanicdata
+		GROUP BY survived;
+
+Q.3) Find the number of dead & alive by/acco. to sex.
+
+	SELECT sex,(CASE survived
+		   when 0 then 'survived'
+		   when 1 then 'dead'
+		   END) as status, COUNT(*) number from titanicdata
+		   by sex, survived;
+
+Q.4) Find the number of people in each class.
+
+	SELECT pclass, COUNT(*) as number from titanicdata GROUP BY pclass;
+
+
+Q.5) Find the number of dead & alive in each class.
+
+	SELECT pclass,(CASE survived
+			when 0 then 'survived'
+			when 1 then 'dead'
+			END) as status, COUNT(*) as number from titanicdata GROUP BY(pclass,survived);
+
+Q.6) Find the number of dead & alive by/acco. to sex in each class.
+
+	SELECT(CASE survived
+	       when 0 then 'survived'
+	       when 1 then 'dead'
+	       END) as status,sex,pclass from titanicdata GROUP BY(survived,pclass,sex); 
+ 

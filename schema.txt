@@ -1,0 +1,29 @@
+///***-------------Schema-------------------------***///
+
+	Column1		PassengerID
+	Column2		Survived
+	Column3		Pclass
+	Column4		Name
+	Column5		Sex
+	Column6		Age
+	Column7		Sibsp
+	Column8		Parch
+	Column9		Ticket
+	Column10	Fare
+	Column11	Cabin
+	Column12	Embarked
+
+
+
+
+//**--------------Create Database & Table-----------------------**//
+
+	
+	>>create table titanicdata(pid int,surv int,pclass int,......................,embarked string)
+
+	>> LOAD data inpath '/user/-----/' INTO table 'titanicdata'
+
+
+///***-------------------------------------------------------------------***///
+
+----->> After data is loaded, we can start analyzing.
